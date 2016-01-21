@@ -1,0 +1,17 @@
+<h2>文章列表</h2>
+
+<%= form_tag articles_path, method:"get" do%>
+標題<%= text_field_tag :title%>
+內文<%= text_field_tag :content%>
+<%= submit_tag "搜尋"%>
+<%end%>
+
+<% @articles. each do |article|%>
+<!--＠article 賦予一個變數名稱為article作迴圈-->
+<!-- 變數名稱  可以任意取名-->
+<div>
+<%= link_to article.title, article_path(article) %>
+<%= link_to "編輯文章", edit_article_path(article)%>
+<%= link_to "刪除文章", article_path(article), method:"delete"%>
+</div>
+<%end%>

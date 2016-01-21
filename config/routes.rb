@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   
+    root 'home#index'
+     #當瀏覽器 進到 home   會執行home controller中的index action
+    resources :articles
+    #生成restful 對應路徑
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
